@@ -14,8 +14,10 @@ namespace CSharplight
         {
             int rows = 10; 
             int columns = 10;
+            int firstElementInRows = 0;
+            int firstElementInColumns = 0;
             int minValue = 1;
-            int maxValue = 51;
+            int maxValue = 51;  
             int maxElement;
             int[,] matrix = new int[rows, columns];
 
@@ -30,10 +32,11 @@ namespace CSharplight
                     matrix[i, j] = random.Next(minValue, maxValue); 
                     Console.Write(matrix[i, j] + "\t");  
                 }
+
                 Console.WriteLine();
             }
             
-            maxElement = matrix[0, 0];
+            maxElement = matrix[firstElementInRows, firstElementInColumns];
 
             for (int i = 0; i < rows; i++)
             {
@@ -66,6 +69,7 @@ namespace CSharplight
                 {
                     Console.Write(matrix[i, j] + "\t");
                 }
+
                 Console.WriteLine(); 
             }
         }
