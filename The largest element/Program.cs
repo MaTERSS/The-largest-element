@@ -1,4 +1,4 @@
-﻿/*
+/*
 Найти наибольший элемент матрицы A(10,10) и записать ноль в те ячейки, где он находятся. Вывести наибольший элемент, исходную и полученную матрицу. 
 
 Массив под измененную версию не нужен.
@@ -14,11 +14,12 @@ namespace CSharplight
         {
             int rows = 10; 
             int columns = 10;
-            int firstElementInRows = 0;
-            int firstElementInColumns = 0;
+            int firstRowIndex = 0;
+            int firstColumnIndex = 0;
             int minValue = 1;
             int maxValue = 51;  
             int maxElement;
+            int changedMeaning = 0;
             int[,] matrix = new int[rows, columns];
 
             Random random = new Random();
@@ -36,7 +37,7 @@ namespace CSharplight
                 Console.WriteLine();
             }
             
-            maxElement = matrix[firstElementInRows, firstElementInColumns];
+            maxElement = matrix[firstRowIndex, firstColumnIndex];
 
             for (int i = 0; i < rows; i++)
             {
@@ -55,7 +56,7 @@ namespace CSharplight
                 {
                     if (matrix[i, j] == maxElement)
                     {
-                        matrix[i, j] = 0;
+                        matrix[i, j] = changedMeaning;
                     }
                 }
             }
